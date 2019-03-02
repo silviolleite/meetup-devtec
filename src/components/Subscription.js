@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import { Row, Col, Form, FormGroup, Label, Button } from 'reactstrap';
 
 
 export default function Subscription(){
@@ -7,22 +6,49 @@ export default function Subscription(){
     const email = useFormInput('');
 
     return (
-        <Row>
-            <Col>
-                <h1>Formulário de Inscrição</h1>
-                <Form>
-                    <FormGroup>
-                        <Label for="nome">Nome</Label>
-                        <input type="text" name="nome" id="nome" className="form-control" placeholder="Nome Completo" {...name} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="email">Email</Label>
-                        <input type="email" name="email" id="email" className="form-control" placeholder="E-mail" {...email} />
-                    </FormGroup>
-                    <Button color="primary">Me inscrever</Button>
-                </Form>
-            </Col>
-        </Row>
+        <div className="section bg-gradient" id="subscription">
+            <div className="container">
+                <div className="call-to-action">
+                    <h2>Inscreva-se</h2>
+                    <p className="tagline">Este meetup será limitado a XXXXX pessoas. Se você tiver certeza que vai
+                        participar, confirme sua presença. Caso contrário, deixe o lugar para as pessoas que realmente
+                        querem e podem participar.
+                    </p>
+                </div>
+            </div>
+            <section id="form-subscription">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <form id="contactForm">
+                                <div className="row">
+                                    <div className="col-md-6 offset-3">
+                                        <div className="form-group">
+                                            <input className="form-control" id="name" type="text"
+                                                   placeholder="Nome Completo" required="required" />
+                                                <p className="help-block text-danger"></p>
+                                        </div>
+                                        <div className="form-group">
+                                            <input className="form-control" id="email" type="email"
+                                                   placeholder="E-mail válido" required="required" />
+                                                <p className="help-block text-danger"></p>
+                                        </div>
+
+                                        <div className="clearfix"></div>
+                                        <div className="col-lg-12 text-center">
+                                            <div id="success"></div>
+                                            <button id="sendMessageButton" className="btn btn-light text-uppercase"
+                                                    type="submit">Me inscrever agora
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     )
 }
 
