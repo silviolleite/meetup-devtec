@@ -31,7 +31,7 @@ export default function Speakers() {
                         <div className="team-member">
                             <img className="mx-auto rounded-circle" src="images/silvio.png" alt="Silvio Leite" />
                                 <h4>Silvio Leite</h4>
-                                <p className="text-muted">Desenvolvedor Sênior - INPE</p>
+                                <p className="text-muted">Desenvolvedor WEB Sênior - INPE</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
                                         <a href="#"><span className="ti-twitter-alt" /></a>
