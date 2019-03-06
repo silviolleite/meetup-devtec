@@ -86,7 +86,7 @@ export default function Subscription(){
                         <div className="col-lg-12">
                             <form id="contactForm" onSubmit={handleSubmit}>
                                 <div className="row">
-                                    <div className="col-md-6 offset-3">
+                                    <div className="col-md-6 offset-md-3">
                                         <div className="form-group">
                                             <input className="form-control" name="name" id="name" type="text"
                                                    placeholder="Nome Completo"
