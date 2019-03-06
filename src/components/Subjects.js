@@ -1,6 +1,47 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {host, temas} from "./Api";
+import axios from "axios";
 
 export default function Subjects() {
+    const url = host + temas;
+    const [subjects, setSubjects] = useState([]);
+    const [tabs, setTabs] = useState([]);
+
+    useEffect(() => {
+        axios.get(url)
+            .then((data) => {
+                let tabs = data.data.map((tab) => {
+                    return (
+                        <li className="nav-item" key={tab.id}>
+                            <a className={tab.id === 1 ? "nav-link active" : "nav-link"} data-toggle="tab" href={'#' + tab.slug }>{tab.name}</a>
+                        </li>
+                    );
+                });
+                setTabs(tabs);
+                let subjects = data.data.map((subject) => {
+                    return (
+                        <div className={subject.id === 1 ? "tab-pane fade show active" : "tab-pane fade show"} key={subject.id}  id={subject.slug}>
+                            <div className="d-flex flex-column flex-lg-row">
+                                <img src={subject.icon} alt={subject.name}
+                                     className="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0" />
+                                <div>
+
+                                    <h2>{subject.title}</h2>
+                                    <p className="lead">{subject.subtitle}</p>
+                                    <p>{subject.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                });
+                setSubjects(subjects);
+            })
+            .catch(error => {
+                // setLoading(false);
+                // setError("That username isn't registred in GitHub");
+            });
+    }, []);
+
     return (
         <div className="section light-bg" id="temas">
             <div className="container">
@@ -10,104 +51,10 @@ export default function Subjects() {
                 </div>
 
                 <ul className="nav nav-tabs nav-justified" role="tablist">
-                    <li className="nav-item">
-                        <a className="nav-link active" data-toggle="tab" href="#communication">DEV</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" data-toggle="tab" href="#schedule">Tecnologia</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" data-toggle="tab" href="#messages">Empreendedorismo</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" data-toggle="tab" href="#livechat">Mercado de Trabalho</a>
-                    </li>
+                    {tabs}
                 </ul>
                 <div className="tab-content">
-                    <div className="tab-pane fade show active" id="communication">
-                        <div className="d-flex flex-column flex-lg-row">
-                            <img src="images/graphic.png" alt="graphic"
-                                 className="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0" />
-                                <div>
-
-                                    <h2>Comunidade DEV</h2>
-                                    <p className="lead">Palestras voltadas as principais linguagens e ferramentas. </p>
-                                    <p>Conheça as linguagens de programação que são destaque no desenvolvimento de
-                                        software com exemplos práticos.</p>
-                                    <p>Novidades dos mercado de Front-end e Back-end.</p>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="tab-pane fade" id="schedule">
-                        <div className="d-flex flex-column flex-lg-row">
-                            <img src="images/graphic.png" alt="graphic"
-                                 className="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0" />
-                                <div>
-                                    <h2>Tecnologia</h2>
-                                    <p className="lead">Uniquely underwhelm premium outsourcing with proactive
-                                        leadership skills. </p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu
-                                        pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel
-                                        sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
-                                        congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat.
-                                        Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
-                                    </p>
-                                    <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a
-                                        eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl
-                                        euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
-                                        sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis.
-                                        Proin aliquet vulputate aliquam.
-                                    </p>
-                                </div>
-
-                        </div>
-                    </div>
-                    <div className="tab-pane fade" id="messages">
-                        <div className="d-flex flex-column flex-lg-row">
-                            <img src="images/graphic.png" alt="graphic"
-                                 className="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0" />
-                                <div>
-                                    <h2>Empreendedorismo</h2>
-                                    <p className="lead">Uniquely underwhelm premium outsourcing with proactive
-                                        leadership skills. </p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu
-                                        pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel
-                                        sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
-                                        congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat.
-                                        Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
-                                    </p>
-                                    <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a
-                                        eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl
-                                        euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
-                                        sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis.
-                                        Proin aliquet vulputate aliquam.
-                                    </p>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="tab-pane fade" id="livechat">
-                        <div className="d-flex flex-column flex-lg-row">
-                            <img src="images/graphic.png" alt="graphic"
-                                 className="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0" />
-                                <div>
-                                    <h2>Mercado de Trabalho</h2>
-                                    <p className="lead">Uniquely underwhelm premium outsourcing with proactive
-                                        leadership skills. </p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu
-                                        pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel
-                                        sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
-                                        congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat.
-                                        Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
-                                    </p>
-                                    <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a
-                                        eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl
-                                        euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
-                                        sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis.
-                                        Proin aliquet vulputate aliquam.
-                                    </p>
-                                </div>
-                        </div>
-                    </div>
+                    {subjects}
                 </div>
 
 

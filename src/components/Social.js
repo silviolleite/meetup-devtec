@@ -7,8 +7,8 @@ export default function Social() {
                 <div className="row">
                     <div className="col-lg-12">
                         <ul className="social-icons text-center">
-                            <a href="#"><span className="ti-facebook" /></a>
-                            <a href="#"><span className="ti-twitter-alt" /></a>
+                            <a href="http://www.facebook.com"><span className="ti-facebook" /></a>
+                            <a href="http://www.twitter.com"><span className="ti-twitter-alt" /></a>
                         </ul>
                     </div>
                 </div>
