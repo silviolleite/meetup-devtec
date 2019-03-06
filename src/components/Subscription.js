@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Recaptcha from 'react-recaptcha'
 import { host, inscricoes} from './Api'
 import axios from "axios";
@@ -107,7 +107,7 @@ export default function Subscription(){
                                         </div>
                                         <div className="form-group">
                                             <Recaptcha
-                                                sitekey="6LcReJUUAAAAAAWNesFD1Ow4bg8cxcr0N98CfFyC"
+                                                sitekey="6Lda7JUUAAAAAPzoFpucBuHHn284l6_vsX6TJbNR"
                                                 render="explicit"
                                                 verifyCallback={verifyCallback}
                                             />
