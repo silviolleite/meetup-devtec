@@ -7,7 +7,7 @@ export default function NoMatch(){
 			<Row>
 				<Col className="text-center">
 					<h1 className="display-3">404!</h1>
-					<p className="lead">Page not found</p>
+					<p className="lead">Página não encontrada</p>
 				</Col>
 			</Row>
 		</Container>

@@ -61,7 +61,7 @@ export default function Subscription(){
                 <div className="container">
                     <div className="call-to-action">
                         <h2>Inscrição realizada com sucesso!</h2>
-                        <p className="tagline">Em breve você receberá um e-mail com a confirmação da inscrição.
+                        <p className="tagline">Em breve você receberá um e-mail com a confirmação da sua inscrição.
                         </p>
                     </div>
                 </div>
