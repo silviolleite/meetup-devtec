@@ -33,7 +33,7 @@ export default function About() {
                                     <span className="ti-alarm-clock gradient-fill ti-3x mr-3" />
                                     <div className="media-body">
                                         <h4 className="card-title">Horário</h4>
-                                        <p className="card-text">Das 9 horas às 13 horas da manhã</p>
+                                        <p className="card-text">Das 9 horas às 13 horas</p>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@ export default function About() {
                                     <span className="ti-calendar gradient-fill ti-3x mr-3" />
                                     <div className="media-body">
                                         <h4 className="card-title">Data</h4>
-                                        <p className="card-text">Sábado - Dia 13 de Abril</p>
+                                        <p className="card-text">Sábado - 04 de Maio de 2019</p>
                                     </div>
                                 </div>
                             </div>

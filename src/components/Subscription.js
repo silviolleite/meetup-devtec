@@ -74,9 +74,7 @@ export default function Subscription(){
             <div className="container">
                 <div className="call-to-action">
                     <h2>Inscreva-se</h2>
-                    <p className="tagline">Este meetup será limitado a XXXXX pessoas. Se você tiver certeza que vai
-                        participar, confirme sua presença. Caso contrário, deixe o lugar para as pessoas que realmente
-                        querem e podem participar.
+                    <p className="tagline">Esse meetup tem vagas limitadas. Se você tiver certeza que vai participar, confirme sua presença. Caso contrário, deixe o lugar para as pessoas que realmente querem e podem participar.
                     </p>
                 </div>
             </div>
