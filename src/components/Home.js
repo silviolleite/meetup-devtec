@@ -14,12 +14,12 @@ export default function Home(props) {
         <div>
             <Navigation/>
             <Header/>
-            <Partners/>
             <About/>
             <Speakers/>
             <Subjects/>
             <Subscription/>
             <Social/>
+            <Partners/>
             <Footer />
         </div>
     )
