@@ -24,7 +24,7 @@ export default function Subscription(){
         onSubmit: values => Subscription(values.name, values.email),
         validate: values => ({
             ...(!values.name.length ? { name: 'Preencha com o nome completo.' } : {}),
-            ...(!/^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(values.email) ? { email: 'Preencha com um e-mail válido.' } : {})
+            ...(!/^[\w+._]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(values.email) ? { email: 'Preencha com um e-mail válido.' } : {})
         }),
     });
 
