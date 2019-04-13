@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header className="bg-gradient" id="home">
             <div className="container mt-5">
-                <img src="images/meetupintecfatec.png" width="400" alt="Meetup INTECFATEC Guaratinguetá"
+                <img src="images/meetupintecfatec.png" alt="Meetup INTECFATEC Guaratinguetá"
                      className="img-fluid" />
                 <p className="tagline">Compartilhando conhecimento sobre tecnologias e empreendedorismo.</p>
             </div>

@@ -1,8 +1,7 @@
-import React, { useState, useEffect} from 'react';
-import axios from 'axios';
+import React from 'react';
 import {host, palestrantes} from './Api'
 import LinkSocial from "./LinkSocial";
-import { useFetch } from "./hooks";
+import {useFetch} from "./hooks";
 import Loading from './Loading'
 
 export default function Speakers() {
