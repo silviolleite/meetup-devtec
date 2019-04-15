@@ -14,7 +14,7 @@ export default function Navigation() {
                                     <li className="nav-item"> <a className="nav-link" href="#sobre">SOBRE</a> </li>
                                     <li className="nav-item"> <a className="nav-link" href="#palestrantes">PALESTRANTES</a> </li>
                                     <li className="nav-item"> <a className="nav-link" href="#temas">TEMAS</a> </li>
-                                    <li className="nav-item"><a href="#subscription" className="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Increva-se</a></li>
+                                    <li className="nav-item"><a href="#subscription" className="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Inscreva-se</a></li>
                                 </ul>
                             </div>
                         </nav>
