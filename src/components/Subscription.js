@@ -5,7 +5,7 @@ import axios from "axios";
 import { useForm } from 'form-hooks';
 
 export default function Subscription(){
-    const [isVerified, setIsVerified] = useState(false);
+    const [isVerified, setIsVerified] = useState(true);
     const [captchamsg, setCaptchamsg] = useState('');
     const [created, setCreated] = useState(false);
     const {
@@ -47,8 +47,6 @@ export default function Subscription(){
                 })
                 .catch(error => {
                     console.log(error)
-                    // setLoading(false);
-                    // setError("That username isn't registred in GitHub");
                 });
         }else{
             setCaptchamsg('Narque a opção eu não sou robô')
@@ -103,14 +101,14 @@ export default function Subscription(){
                                             />
                                             {touched['email'] && errors['email']}
                                         </div>
-                                        <div className="form-group">
-                                            <Recaptcha
-                                                sitekey="6Lda7JUUAAAAAPzoFpucBuHHn284l6_vsX6TJbNR"
-                                                render="explicit"
-                                                verifyCallback={verifyCallback}
-                                            />
-                                            {captchamsg}
-                                        </div>
+                                        {/*<div className="form-group">*/}
+                                        {/*    <Recaptcha*/}
+                                        {/*        sitekey="6Lda7JUUAAAAAPzoFpucBuHHn284l6_vsX6TJbNR"*/}
+                                        {/*        render="explicit"*/}
+                                        {/*        verifyCallback={verifyCallback}*/}
+                                        {/*    />*/}
+                                        {/*    {captchamsg}*/}
+                                        {/*</div>*/}
                                         <div className="clearfix" />
                                         <div className="col-lg-12 text-center">
                                             <button id="sendMessageButton" className="btn btn-light text-uppercase"
