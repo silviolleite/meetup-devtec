@@ -8,6 +8,7 @@ export default function Subscription(){
     const [isVerified, setIsVerified] = useState(true);
     const [captchamsg, setCaptchamsg] = useState('');
     const [created, setCreated] = useState(false);
+    const closed = useState(true);
     const {
         errors,
         touched,
@@ -51,6 +52,18 @@ export default function Subscription(){
         }else{
             setCaptchamsg('Narque a opção eu não sou robô')
         }
+    }
+    if (closed){
+        return (
+            <div className="section bg-gradient" id="subscription">
+                <div className="container">
+                    <div className="call-to-action">
+                        <h2>Aguarde o próximo meetup</h2>
+                        <p className="tagline">Siga a página da FATEC no facebook e fique por dentro da agenda de meetups</p>
+                    </div>
+                </div>
+            </div>
+        )
     }
 
     if (created){
